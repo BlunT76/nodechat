@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" const="text/html;charset=UTF-8" />
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    <title>Simple Chat App</title>
+</head>
+
+<body>
+    <header>
+        <h1>Node Chat</h1>
+    </header>
+    <div class="container">
+        <div id="login" class="center">
+            <input id="username" type="text" />
+            <button id="send_username" type="button" class="btn center">Choose username</button>
+        </div>
+        <div id="chat" class="center">
+            <div id="chatroom" class="center">
+                <!--<div id="feedback"></div>-->
+            </div>
+            <div id="input_zone">
+                <input id="message" type="text" autofocus="true" />
+                <button id="send_message" class="btn" type="button">Send</button>
+            </div>
+        </div>
+        <div>
+            <span id="listusers"></span>
+        </div>
+    </div>
+    <!--<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js'></script>
+    <script src="chat.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+body {
+    background: #F0F0F1;
+    margin: 0 auto;
+    font-family: 'Ubuntu', sans-serif;
+    overflow: auto;
+}
+
+h1 {
+    background: #26418f;
+    color: #EDEDED;
+    text-align: center;
+    margin-top: 0px;
+}
+
+input {
+    border: none;
+    border-radius: 3px;
+    font-size: 1.2em;
+}
+
+input:focus {
+    outline: none;
+    border:1px solid #26418f;
+}
+
+img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 400px;
+}
+
+img:hover {
+    box-shadow: 0 0 2px 1px rgba(223, 79, 128, 1);
+}
+
+span {
+    margin:5px;
+}
+
+a{
+    color: #26418f;
+}
+
+a:visited {
+    color: #DF4F80;    
+}
+
+#login {
+    display:none;
+    text-align: center;
+}
+
+#chat {
+    display:none;
+}
+
+#chatroom {
+    height:500px;
+    width:800px;
+    max-width: 800px;
+    overflow-y:auto;
+    overflow-x: hidden;
+    background: #DDDEDD;    
+}
+
+#input_zone {
+    text-align: right;
+    margin-top: 5px;
+    max-width: 800px;
+}
+
+#message {
+    width:100%;
+}
+
+#send_message {
+    margin-top: 5px;
+}
+
+.container{
+    width: 800px;
+    margin: 0 auto;
+}
+
+.time {
+    font-size: 0.6em;
+    background: #DF4F80;
+    border-radius: 3px;
+    margin:2px;
+}
+
+.user {
+    font-size: 1em;
+    background: #5A69BC;
+    border-radius: 3px;
+    margin: 2px;
+}
+
+.msg{
+    width:780px;
+    background: #8B96EE;
+    border-radius: 3px;
+    margin-top: 15px;
+    margin-bottom: 2px;
+    margin-left: 2px;
+    margin-right: 12px;
+    font-size: 1em;
+    word-wrap: break-word;
+}
+
+.btn {
+    background: #5A69BC;
+    border: none;
+    border-radius: 3px;
+    color: #EDEDED;
+    font-size: 1.2em;    
+}
+
+.btn:hover {
+    background: #26418f;    
+}
+
+.center {
+    margin: 0 auto;
+}
+
+.margin {
+    margin:5px;
+}
