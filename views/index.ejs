@@ -13,22 +13,25 @@
     <header>
         <h1>Node Chat</h1>
     </header>
-    <div class="container">
-        <div id="login" class="center">
-            <input id="username" type="text" />
-            <button id="send_username" type="button" class="btn center">Choose username</button>
+    <div class="main">
+        <div class="userlist">
+            <p class="text-center">Online users</p>
+            <div id="list"> </div>
         </div>
-        <div id="chat" class="center">
-            <div id="chatroom" class="center">
-                <!--<div id="feedback"></div>-->
+        <div class="container">
+            <div id="login" class="center">
+                <input id="username" type="text" />
+                <button id="send_username" type="button" class="btn center">Choose username</button>
             </div>
-            <div id="input_zone">
-                <input id="message" type="text" autofocus="true" />
-                <button id="send_message" class="btn" type="button">Send</button>
+            <div id="chat" class="center">
+                <div id="chatroom" class="center">
+                    <!--<div id="feedback"></div>-->
+                </div>
+                <div id="input_zone">
+                    <input id="message" type="text" autofocus="true" />
+                    <button id="send_message" class="btn" type="button">Send</button>
+                </div>
             </div>
-        </div>
-        <div>
-            <span id="listusers"></span>
         </div>
     </div>
     <!--<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>-->

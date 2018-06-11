@@ -80,6 +80,8 @@ a:visited {
 .container{
     width: 800px;
     margin: 0 auto;
+    grid-column-start: 3;
+    grid-column-end: 8;
 }
 
 .time {
@@ -126,4 +128,27 @@ a:visited {
 
 .margin {
     margin:5px;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 8fr 8fr 8fr 8fr 8fr 8fr 8fr 8fr ;
+    grid-column-gap: 15px;
+}
+
+.userlist {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    overflow-y:auto;
+    overflow-x: hidden;
+    background: #DDDEDD;
+    height:500px;
+}
+.text-center {
+    text-align: center;
+    background: #26418f;
+    border-radius: 5px;
+    color: #EDEDED;
+    margin: 0px;
+    padding: 18px;
 }

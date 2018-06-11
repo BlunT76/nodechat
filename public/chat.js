@@ -6,7 +6,7 @@
     var send_message = document.getElementById('send_message')
     var send_username = document.getElementById('send_username')
     var chatroom = document.getElementById('chatroom')
-    var userlist = document.getElementById('listusers')
+    var user_list = document.getElementById('list')
 
     //recupere username en localstorage
     if (window.localStorage.getItem('username')) {
@@ -40,17 +40,17 @@
         }
     };
     //efface les msg lors d'une reconnection,pour eviter les msg en doubles
-    socket.on('connect', function(){
+    socket.on('connect', function () {
         chatroom.innerHTML = '';
     })
     //a la deconnexion
-    socket.on('disconnect', function(){
+    socket.on('disconnect', function () {
         chatroom.innerHTML += ' It seems internet connection is cut, or server is down, wait a few seconds or try again later ';
         chatroom.scrollTop = chatroom.scrollHeight;
         message.focus();
-        
+
     })
-    
+
     //ecoute new msg
     socket.on('message', function (data) {
         var msgTime = data.date;
@@ -68,18 +68,26 @@
         }
         chatroom.innerHTML += '<div class="margin"><hr><span class="user">' + data.username + " " + '</span>' + '<span class="time">' + msgTime + '</span><br>' + msgType + '</div>';
         //Gere le scroll pour toujours voir les derniers messages
-        setTimeout(function(){chatroom.scrollTop = chatroom.scrollHeight;},100);
+        setTimeout(function () {
+            chatroom.scrollTop = chatroom.scrollHeight;
+        }, 100);
         message.focus();
-        
+
     })
     //Declare un nouveau user sur le chat
     socket.on('user_connected', function (data) {
-        chatroom.innerHTML += ' Hey, ' + data.username + ' is there!! '
+        chatroom.innerHTML += ' Hey, ' + data.username + ' is there!! ';
+        console.log(data.listusers)
+        user_list.innerHTML = "";
+        for (var i = 0; i < data.listusers.length; i++) {
+            console.log("test ok")
+            user_list.innerHTML += '<p>' + data.listusers[i].user + '</p>'
+        }
         chatroom.scrollTop = chatroom.scrollHeight;
         message.focus();
     })
     //dire bye quand un user se deconnecte
-    socket.on('byeuser', function(data){
+    socket.on('byeuser', function (data) {
         chatroom.innerHTML += ' ' + data.username + ' is gone, bye bye ' + data.username + '!! ';
         chatroom.scrollTop = chatroom.scrollHeight;
         message.focus();
@@ -94,5 +102,5 @@
         document.getElementById('login').style.display = "none";
         chatroom.scrollTop = chatroom.scrollHeight;
     })
-    
+
 })();
